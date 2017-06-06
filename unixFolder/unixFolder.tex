@@ -1,0 +1,345 @@
+% Created 2017-06-06 Tue 16:36
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{王韧}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={王韧},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode 9.0.7)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{unix}
+\label{sec:orgd31a75b}
+\subsection{Gnome terminal monokai}
+\label{sec:org837c6ad}
+\url{https://github.com/pricco/gnome-terminal-colors-monokai}
+\subsection{Gnome High DPI linux}
+\label{sec:org6e3b722}
+\begin{verbatim}
+gsettings set org.gnome.desktop.interface scaling-factor 2 
+\end{verbatim}
+\subsection{Virtual box 网络}
+\label{sec:org98069fe}
+配置virtualbox
+Centos7
+选择桥接模式，桥接到无线网卡
+虚拟机就在宿主机的同一个局域网中了
+就可以用ssh连
+192.168.1.xxx
+美滋滋
+\subsection{docker archlinux}
+\label{sec:orge38032f}
+\begin{verbatim}
+docker build --rm -t iamwr/arch_texlive:latest .
+docker run -it  iamwr/arch_texlive bash /startup_wr.sh
+docker run -d -p 8888:8888 -v /home/vik/notebooks:/home/ds/notebooks dataquestio/python3-starter.
+docker run -it -v $(pwd)/shared_folder:/home/shared_folder iamwr/arch_texlive bash /startup_wr.sh
+\end{verbatim}
+\subsection{toilet}
+\label{sec:org912bb94}
+\begin{verbatim}
+toilet
+
+ m    m mmmmmm m    m mmmmmm m    m mmmmmm
+ #    # #      #    # #      #    # #
+ #mmmm# #mmmmm #mmmm# #mmmmm #mmmm# #mmmmm
+ #    # #      #    # #      #    # #
+ #    # #mmmmm #    # #mmmmm #    # #mmmmm
+\end{verbatim}
+\subsection{Share folder docker}
+\label{sec:orgc82915a}
+\begin{verbatim}
+docker run  -it --name  learn_shared_folder -v  /Users/wangren/OneDriveB/OneDrive\ -\ Ren.org/Wang/Docker/temp:/home/tempwr archlinuxjp/archlinux bash
+\end{verbatim}
+\subsection{oh my zsh show hostname}
+\label{sec:org8e9639f}
+\begin{verbatim}
+PROMPT='%{$fg_bold[white]%}%M %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+\end{verbatim}
+\subsection{Docker: Data Science Environment with Jupyter}
+\label{sec:orgc9bd6e8}
+\subsection{ssh -p}
+\label{sec:orgd8518cb}
+\begin{verbatim}
+: 1485921200:0;ssh -p2222 root@127.0.0.1
+\end{verbatim}
+\subsection{dd 烧录 iso 入U盘中}
+\label{sec:org95a6f11}
+\begin{verbatim}
+: 1489291031:0;sudo dd if=/Users/wangren/Documents/ISO/CentOS-7-x86_64-Everything-1611.iso of=/dev/disk1
+: 1489291378:0;diskutil list
+\end{verbatim}
+\subsection{Purgeable space on mac}
+\label{sec:orgfbe3431}
+\begin{verbatim}
+: 1489299288:0;mkfile -n 10g ~/Desktop/BIGFILE4
+: 1489299337:0;mkfile -n 10g ~/Desktop/BIGFILE5
+: 1489299419:0;ls ~/Desktop
+: 1489299461:0;sudo RM ~/Desktop/BIGFILE
+: 1489299469:0;sudo RM ~/Desktop/BIGFILE1
+\end{verbatim}
+\subsection{virtualbox 连接物理硬盘}
+\label{sec:orgc593546}
+\begin{verbatim}
+diskutil list
+
+diskutil umountDisk disk2
+
+sudo VBoxManage internalcommands createrawvmdk \
+    -filename /Users/wangren/Phy_virtualbox/u2.vmdk \
+    -rawdisk /dev/disk2
+
+sudo chmod 666 Phy_virtualbox/c1.vmdk
+\end{verbatim}
+\subsection{dash in IOS}
+\label{sec:org3b48a59}
+Installation Instructions
+You can use Xcode 8 to install Dash on your iOS device using just your Apple ID.
+All you need to do is:
+\begin{enumerate}
+\item Install Xcode 8
+\item Download the Dash for iOS Source Code
+\item Open "Dash iOS.xcworkspace" in Xcode
+\item Open Xcode's Preferences > Accounts and add your Apple ID
+\item In Xcode's sidebar select "Dash iOS" and go to Targets > Dash > General > Identity and add a word to the end of the Bundle Identifier to make it unique. Also select your Apple ID in Signing > Team
+\item Connect your iPad or iPhone and select it in Xcode's Product menu > Destination
+\item Press CMD+R or Product > Run to install Dash
+\item If you install using a free (non-developer) account, make sure to rebuild Dash every 7 days, otherwise it will quit at launch when your certificate expires
+\end{enumerate}
+Contact me if you need help.
+\subsection{PATH mysql}
+\label{sec:org04b256d}
+\begin{verbatim}
+show variables like '%char%';
+PATH=${PATH}:/usr/local/mysql/bin
+\end{verbatim}
+\subsection{grep}
+\label{sec:orgfbcdde9}
+\begin{verbatim}
+grep -r cube .
+\end{verbatim}
+\subsection{sjtu yum source}
+\label{sec:org170f07f}
+\begin{verbatim}
+# CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the 
+# remarked out baseurl= line instead.
+#
+#
+[base]
+name=CentOS-$releasever - Base - 163.com
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
+baseurl=http://ftp.sjtu.edu.cn/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=http://ftp.sjtu.edu.cn/centos/RPM-GPG-KEY-CentOS-7
+
+#released updates
+[updates]
+name=CentOS-$releasever - Updates - 163.com
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates
+baseurl=http://ftp.sjtu.edu.cn/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=http://ftp.sjtu.edu.cn/centos/RPM-GPG-KEY-CentOS-7
+
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras - 163.com
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras
+baseurl=http://ftp.sjtu.edu.cn/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=http://ftp.sjtu.edu.cn/centos/RPM-GPG-KEY-CentOS-7
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus - 163.com
+baseurl=http://ftp.sjtu.edu.cn/centos/$releasever/os/$basearch/
+
+gpgcheck=1
+enabled=0
+gpgkey=http://ftp.sjtu.edu.cn/centos/RPM-GPG-KEY-CentOS-7
+\end{verbatim}
+\subsection{vps benchmark}
+\label{sec:org082b9a0}
+Bandwagon
+CPU model            : Intel(R) Xeon(R) CPU E3-1245 v5 @ 3.50GHz
+Number of cores      : 1
+CPU frequency        : 3504.038 MHz
+Total size of Disk   : 10.2 GB (1.0 GB Used)
+Total amount of Mem  : 512 MB (5 MB Used)
+Total amount of Swap : 64 MB (0 MB Used)
+System uptime        : 0 days, 0 hour 1 min
+Load average         : 0.00, 0.00, 0.00
+OS                   : CentOS 7.2.1511
+Arch                 : x86\(_{\text{64}}\) (64 Bit)
+Kernel               : 2.6.32-042stab113.21
+
+\noindent\rule{\textwidth}{0.5pt}
+I/O speed(1st run)   : 1.1 GB/s
+I/O speed(2nd run)   : 1.1 GB/s
+I/O speed(3rd run)   : 1.1 GB/s
+Average I/O speed    : 1126.4 MB/s
+
+\noindent\rule{\textwidth}{0.5pt}
+Node Name                       IPv4 address            Download Speed
+CacheFly                        205.234.175.175         60.4MB/s
+Linode, Tokyo, JP               106.187.96.148          18.5MB/s
+Linode, Singapore, SG           139.162.23.4            6.41MB/s
+Linode, London, UK              176.58.107.39           8.17MB/s
+Linode, Frankfurt, DE           139.162.130.8           6.21MB/s
+Linode, Fremont, CA             50.116.14.9             14.3MB/s
+Softlayer, Dallas, TX           173.192.68.18           60.8MB/s
+Softlayer, Seattle, WA          67.228.112.250          66.8MB/s
+Softlayer, Frankfurt, DE        159.122.69.4            5.58MB/s
+Softlayer, Singapore, SG        119.81.28.170           11.0MB/s
+Softlayer, HongKong, CN         119.81.130.170          13.9MB/s
+
+Aliyun
+
+CPU model            : Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
+Number of cores      : 1
+CPU frequency        : 2494.222 MHz
+Total size of Disk   : 80.5 GB (4.0 GB Used)
+Total amount of Mem  : 994 MB (740 MB Used)
+Total amount of Swap : 0 MB (0 MB Used)
+System uptime        : 27 days, 14 hour 53 min
+Load average         : 0.00, 0.01, 0.05
+OS                   : CentOS 7.0.1406
+Arch                 : x86\(_{\text{64}}\) (64 Bit)
+Kernel               : 3.10.0-123.9.3.el7.x86\(_{\text{64}}\)
+
+\noindent\rule{\textwidth}{0.5pt}
+I/O speed(1st run)   : 56.5 MB/s
+I/O speed(2nd run)   : 56.5 MB/s
+I/O speed(3rd run)   : 56.8 MB/s
+Average I/O speed    : 56.6 MB/s
+
+\noindent\rule{\textwidth}{0.5pt}
+Node Name                       IPv4 address            Download Speed
+CacheFly                        204.93.150.152          28.0MB/s
+Linode, Tokyo, JP               106.187.96.148          25.0MB/s
+Linode, Singapore, SG           139.162.23.4            31.6MB/s
+Linode, London, UK              176.58.107.39           4.52MB/s
+Linode, Frankfurt, DE           139.162.130.8           6.34MB/s
+Linode, Fremont, CA             50.116.14.9             987KB/s
+Softlayer, Dallas, TX           173.192.68.18           6.21MB/s
+Softlayer, Seattle, WA          67.228.112.250          7.72MB/s
+Softlayer, Frankfurt, DE        159.122.69.4            4.05MB/s
+Softlayer, Singapore, SG        119.81.28.170           9.59MB/s
+Softlayer, HongKong, CN         119.81.130.170          95.2MB/s
+\subsection{VLC wallpaper}
+\label{sec:org4188414}
+Preferences
+Video -Advance
+Video Session
+Enable wallpaper mode
+\subsection{show the position of disks}
+\label{sec:org91602c5}
+lsblk
+有的时候，7.9G的磁盘是在sr0,现在它在sr1，不解
+尽量不要使用修改tab的方法，导致总是进入安全模式
+还是用mount
+try emacs gist el
+\subsection{SSH to local virtual machine}
+\label{sec:orgc8d2080}
+• install centos 7 minimal
+• enable network
+• exact virtual machine setting network adaptor NAT
+• Port Forwarding
+Host IP:    127.0.0.1
+Host Port:  2222
+Guest IP:   10.0.2.15
+Guest Port: 22
+
+• ssh link
+ssh -p2222 root@127.0.0.1
+
+It should succeed.
+TODO:
+write guide/log for yum local iso
+
+ssh -p2222 root@127.0.0.1
+
+Use
+Ifconfig to see the guest ip
+\section{MIT opensource course}
+\label{sec:org4199d9e}
+\subsection{CS}
+\label{sec:org537247c}
+Algorithms and Data Structures
+Artificial Intelligence
+Computer Design and Engineering
+Computer Networks
+Cryptography
+Data Mining
+Graphics and Visualization
+Human-Computer Interfaces
+Operating Systems
+Programming Languages
+Software Design and Engineering
+Theory of Computation
+\subsection{EE}
+\label{sec:org3e4bbb2}
+Digital Systems
+Electric Power
+Electronics
+Robotics and Control Systems
+Signal Processing
+Telecommunications
+\section{JI}
+\label{sec:orgb5a2d77}
+\subsection{黑波的信}
+\label{sec:orgffdfdd7}
+致交大密西根学院2016级同学一封信
+
+交大密西根学院2016级同学：
+
+大家好！很高兴在2017—2018春季学期开学之前跟大家有一个交流的机会。2016—2017秋季学期年已经过去，寒假也将近尾声。在这辞旧迎新的时刻，我向所有交大密西根学院2016级学生致以新学期的祝福！
+2016—2017秋季学期，对你们来说，是非常重要的一个学期，也是难忘的学期！你们经历了十年寒窗，完成了人生最重要的一次考试——高考；你们敢于争先、不断进取，体验了密西根学院独有的学习和生活方式；你们开拓创新、奋勇向前，参加了交大和密西根学院的一系列活动‥‥‥这一切，让你们的家长和我都感到感欣慰。
+2017—2018春季学期，我有几点想法和大家进行交流：
+第一，学习方面：
+开学将至，我仔细查看了交大密西根学院2016级每一位同学的成绩单，也和跟一些同学进行了深入交流，发现同学们中间关于GPA流传着错误的认识，这些错误的说法从密西根学院成立至今一直在密西根学院学生中流传，有必要跟大家做一些解释。
+首先，密西根学院2016级一共有315学生，大部分同学的成绩非常不错，但是还是有部分同学（2\%）左右出现挂科。因此，希望取得优异成绩的同学们不骄不躁，继续努力；成绩不理想的同学加油加力，多多和老师同学交流，在2017—2018春季学期迎头赶上。
+其次，密西根学院没有核心GPA或者所谓的Core-GPA的概念，学院双学位申请、各类学位项目、交换项目、奖学金申请所指GPA均指的是综合GPA，也即overall GPA。而2017—2018春季学期的很多课程，都是3-6学分的课程，请各位同学一定要重视，千万不要在专业课上拼命捞到的绩点，而在在春季的课程上丢掉，那样得不偿失。影响以后的双学位申请、留学申请和工作。
+再次，密西根学院的各类项目，以及出国申请大家证明成绩用到的都是自己的成绩单，所以成绩单上显现的所有的课程（包括PRP、大创、交流项目等），因而所有成绩全部都很重要。不同的学校计算方式不同，很多学校都会根据成绩单重新计算GPA，所以请大家重视各科成绩，均衡发展，不要单独看中专业课或者某些特定课程的成绩。
+第二，社会活动方面：
+2016—2017秋季续期同学们已经社会活动、社会实践和学生工作等方面取得了巨大成就，希望你们牢记你们心中梦想，不忘初心、继续前进。“新故相推，日生不滞。”在社会活动方面有几点和同学们进行交流沟通：
+首先，密西根学院2017—2018春季学期很多课程都是文科课程，建议同学们春季多读书，转换学习方法和思路，按照文科的课程来学习，不要把自己憋在寝室，不要打游戏，和同学老实多进行沟通交流，提高自己的综合能力。春光明媚，青春大好，多出去交友、郊游。“养吾胸中浩然之气”，不要窝居寝室，靠外卖度日。
+ 其次，2016—2017夏季学期，交大的校级学生组织没有进行招新，2017—2018春季开学前两周，校学联、校青志队等都会进行招新。建议同学们都去参加一下这些学校层面的活动，在学有余力的情况下锻炼自己，结交朋友，开拓视野，增长知识。
+再次，密西根学院学生会在2017—2018春季学期将要举办春季文化艺术节，科协会举办新生机械大赛，请大家多参与活动，多读书，利用好这个相对缓和压力不大的学期。
+最后，建议各位同学早些联系教授做些项目，或者自己申请一些大学生创新项目、PRP项目找找科研兴趣；想要锻炼自己领导能力和社交才能的同学，大家也可以在第二课堂方面继续发展，多参加一些组织，找到一些闪光点；当然，可以再学有余力的情况下去找找实习，锻炼一下职业技能。
+第三，生活作息方面：
+ 首先，从2017—2018春季学期开始，你们将面临10个月的连续学习，春季学习期、夏季学期、军训和秋季学期三个学期，你们将要经历高强度的磨砺。天上不会掉馅饼，努力奋斗才能梦想成真。希望你们从此时开始，再接再厉，合理安排好作息时间，实现自己内心最初的梦想。
+ 其次，我将加强对交大密西根学院班主任、助理班主任和班干部的日常管理工作，督促学生搞好寝室文明建设。春季学期，我将和各个班级的大班和小班定期走访宿舍，杜绝同学们在宿舍打游戏，希望同学们自觉自省，合理利用好时间，不要浪费大好青春。
+ 再次，2017年11月份左右，密西根大学2+2项目将开始申请，2016级有315人，去了2+2之后还会有将近200人，打算2+2的同学一定要利用好2017—2018春季学习；同时，同学们一定要多参加活动，多读书，增强自己的综合能力，为自己的未来打好基础；再有，请各位有志于到海外留学的同学，抓紧时间到教务处网站了解申请交大的海外留学项目，了解基本的规则和制度，为自己留学深造做好准备。
+亲爱的同学们，作为老师，我们唯一的等待就是希望你们能够秉承“饮水思源、爱国荣校”的交大校训，期盼你们在这个伟大的时代能够指点江山、激扬文字！ 同学们，为了你们心中美好的理想，让我们共同奋进！
+寒冬已过，但窗外仍旧寒冷刺骨，但我相信同学们的内心必将火热无比，让我们满怀信心和期待，一起迎接新的学期！
+最后，欢迎大家回到交大密西根学院，生机勃勃，气宇轩昂地度过鸡年！
+黑波
+2017年2月18日于交大密西根学院319办公室
+\end{document}
